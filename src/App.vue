@@ -1,18 +1,20 @@
 <template>
-  <MenuComponent></MenuComponent>
-  <p>esto es una prueba</p>
-  <p>hola soy yo</p>
-  <LogoComponent />
+  <button @click="show = !show">Menu</button>
+  <transition name="fade">
+    <MenuMenu v-show="show" />
+  </transition>
 </template>
 
 <script>
-import MenuComponent from "@/components/MenuComponent.vue";
-import LogoComponent from "@/components/LogoComponent.vue";
+import MenuMenu from "@/components/MenuMenu.vue";
 export default {
   name: "App",
-  components: {
-    MenuComponent,
-    LogoComponent,
+  components: { MenuMenu },
+
+  data() {
+    return {
+      show: false,
+    };
   },
 };
 </script>
@@ -25,5 +27,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
 }
 </style>

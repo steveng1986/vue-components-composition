@@ -1,18 +1,24 @@
 <template>
-  <ModalComponent></ModalComponent>
+  <div>{{ text }}</div>
 </template>
 
 <script>
-import ModalComponent from "@/components/ModalComponent.vue";
 export default {
   name: "App",
-  components: {
-    ModalComponent,
-  },
+  components: {},
   data() {
     return {
-      show: false,
+      text: "Hola soy una variable",
     };
+  },
+  beforeCreate() {
+    console.log("soy before create", this.$data, this.$el);
+  },
+  created() {
+    console.log("soy created", this.$data, this.$el);
+  },
+  mounted() {
+    console.log("soy mounted", this.$data, this.$el);
   },
 };
 </script>

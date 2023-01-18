@@ -1,10 +1,13 @@
 <template>
   <div>{{ text }}</div>
+  <div>{{ algo }}</div>
 </template>
 
 <script>
+import base from "@/mixines/base";
 export default {
   name: "App",
+  mixins: [base],
   components: {},
   data() {
     return {
@@ -22,7 +25,6 @@ export default {
   },
 };
 </script>
-
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
